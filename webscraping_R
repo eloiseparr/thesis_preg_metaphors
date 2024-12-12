@@ -1,0 +1,6 @@
+library(rvest) 
+url <- 'https://www.motherandbaby.co.uk/pregnancy/week-by-week/pregnancy-week-by-week/one-week-pregnant'
+  webpage <- read_html(url)
+  page_html <- html_nodes(webpage, '.img-responsive+ .padding-bottom-10 , .margin-bottom-25 .margin-bottom-10')
+  page <- html_text(page_html)
+  write.table(page, file = "one-week-pregnant.txt")
